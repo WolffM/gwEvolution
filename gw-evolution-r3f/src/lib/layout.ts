@@ -7,6 +7,8 @@ export type Vec3 = [x: number, y: number, z: number];
 /** Convert degrees to radians */
 const toRad = (deg: number) => (deg * Math.PI) / 180;
 
+export const DEFAULT_RING_RADIUS = 3;
+
 /**
  * Returns 6 positions on the XZ plane laid out as a flat-top hex ring.
  * Angle order: 0°, 60°, 120°, 180°, 240°, 300°

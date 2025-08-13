@@ -2,6 +2,7 @@ import { useMemo, useRef, useState } from "react";
 import { Group, Mesh, Vector3 } from "three";
 import { Image, useCursor } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
+import { a, type SpringValue } from "@react-spring/three";
 import type { Vec3 } from "../lib/layout";
 
 export type HexClassProps = {
@@ -13,10 +14,13 @@ export type HexClassProps = {
   selected?: boolean;
   hovered?: boolean;
   onClick?: (id: string) => void;
+  onHoverChange?: (hovered: boolean, id: string) => void;
+  baseScale?: number; // external scale (e.g., from springs)
+  opacity?: number | SpringValue<number>; // 0..1 (supports animated)
 };
 
 /** A thin hex tile with optional icon that gently bobs and scales on hover. */
-export function HexClass({ id, color, iconUrl, position, selected = false, hovered = false, onClick }: HexClassProps) {
+export function HexClass({ id, color, iconUrl, position, selected = false, hovered = false, onClick, onHoverChange, baseScale = 1, opacity = 1 }: HexClassProps) {
   const groupRef = useRef<Group>(null);
   const meshRef = useRef<Mesh>(null);
   const [localHover, setLocalHover] = useState(false);
@@ -30,9 +34,9 @@ export function HexClass({ id, color, iconUrl, position, selected = false, hover
     const g = groupRef.current;
     if (!g) return;
 
-    // Hover scale smoothing
-    const target = isHover ? 1.05 : 1.0;
-    g.scale.lerp(new Vector3(target, target, target), Math.min(1, dt * 8));
+    // Hover scale smoothing (combined with external baseScale)
+    const targetScalar = (isHover ? 1.05 : 1.0) * baseScale;
+    g.scale.lerp(new Vector3(targetScalar, targetScalar, targetScalar), Math.min(1, dt * 8));
 
     // Subtle bobbing on Y
     const t = state.clock.getElapsedTime();
@@ -50,12 +54,12 @@ export function HexClass({ id, color, iconUrl, position, selected = false, hover
         ref={meshRef}
         castShadow
         receiveShadow
-        onPointerOver={(e) => { e.stopPropagation(); setLocalHover(true); }}
-        onPointerOut={(e) => { e.stopPropagation(); setLocalHover(false); }}
+        onPointerOver={(e) => { e.stopPropagation(); setLocalHover(true); onHoverChange?.(true, id); }}
+        onPointerOut={(e) => { e.stopPropagation(); setLocalHover(false); onHoverChange?.(false, id); }}
       >
         {/* Thin cylinder with 6 radial segments forms a hex prism */}
         <cylinderGeometry args={[0.9, 0.9, 0.08, 6]} />
-        <meshStandardMaterial color={color} roughness={0.6} metalness={0.05} />
+        <a.meshStandardMaterial color={color} roughness={0.6} metalness={0.05} transparent opacity={opacity as any} />
       </mesh>
 
       {/* Optional icon slightly above the top face */}

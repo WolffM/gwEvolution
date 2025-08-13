@@ -67,5 +67,14 @@
       ]
     }
   ],
-  "links": []
+  "links": [
+    { "from": "dominator", "to": "evoker", "weight": 1 },
+    { "from": "summoner", "to": "warlock", "weight": 1 },
+    { "from": "inspirer", "to": "mystic", "weight": 0.8 },
+    { "from": "crusher", "to": "hunter", "weight": 0.7 },
+    { "from": "striker", "to": "assassin", "weight": 0.9 },
+    { "from": "warlord", "to": "mender", "weight": 0.6 },
+    { "from": "elementalist", "to": "warlock", "weight": 0.5 },
+    { "from": "vitalist", "to": "mender", "weight": 0.6 }
+  ]
 }

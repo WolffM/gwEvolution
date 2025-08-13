@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Scene } from "../three/Scene";
 import { loadAppData, type LoadedAppData } from "../data/load";
 import { Sandbox } from "../Sandbox";
-import { HexClass } from "../three/HexClass";
+import { Hud } from "../ui/Hud";
 
 export default function AppPage() {
   const [data, setData] = useState<LoadedAppData | null>(null);
@@ -24,30 +24,11 @@ export default function AppPage() {
         </div>
       </div>
 
-      <Scene data={data}>
-        {/* Temporary test geometry to visualize lights */}
-        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow>
-          <planeGeometry args={[20, 20]} />
-          <meshStandardMaterial color="#1e2129" roughness={1} metalness={0} />
-        </mesh>
+  {/* HUD overlay */}
+  <Hud data={data} />
 
-        {/* Sample Hex tiles */}
-        <HexClass
-          id="warrior"
-          name="Warrior"
-          color="#1ABC9C"
-          position={[-2, 0.04, 0]}
-          selected={false}
-          onClick={(id) => console.log("tile click:", id)}
-        />
-        <HexClass
-          id="priest"
-          name="Priest"
-          color="#E74C3C"
-          position={[2, 0.04, 0]}
-          selected={false}
-          onClick={(id) => console.log("tile click:", id)}
-        />
+      <Scene data={data}>
+        {/* Environment now provides the dungeon floor and walls; no extra ground plane needed. */}
       </Scene>
     </div>
   );
