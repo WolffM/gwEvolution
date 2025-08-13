@@ -1,0 +1,64 @@
+{
+  "classes": [
+    {
+      "id": 0,
+      "name": "Priest",
+      "color": "#E74C3C",
+      "specs": [
+        "Mender",
+        "Wardweaver",
+        "Inquisitor"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Druid",
+      "color": "#9B59B6",
+      "specs": [
+        "Shapeshifter",
+        "Vitalist",
+        "Elementalist"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Mesmer",
+      "color": "#3498DB",
+      "specs": [
+        "Dominator",
+        "Summoner",
+        "Inspirer"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Warrior",
+      "color": "#1ABC9C",
+      "specs": [
+        "Crusher",
+        "Striker",
+        "Warlord"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Mage",
+      "color": "#F1C40F",
+      "specs": [
+        "Evoker",
+        "Warlock",
+        "Mystic"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Rogue",
+      "color": "#E67E22",
+      "specs": [
+        "Hunter",
+        "Assassin",
+        "Shadow"
+      ]
+    }
+  ]
+}

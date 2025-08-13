@@ -1,0 +1,23 @@
+Priest – Mender
+Priest – Wardweaver
+Priest – Inquisitor
+
+Druid – Shapeshifter
+Druid – Vitalist
+Druid – Elementalist
+
+Mesmer – Dominator
+Mesmer – Summoner
+Mesmer – Inspirer
+
+Warrior – Crusher
+Warrior – Striker
+Warrior – Warlord
+
+Mage – Evoker
+Mage – Warlock
+Mage – Mystic
+
+Rogue – Hunter
+Rogue – Assassin
+Rogue – Shadow

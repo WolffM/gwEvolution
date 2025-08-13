@@ -1,0 +1,8 @@
+{
+  "palette": ["#E74C3C", "#9B59B6", "#3498DB", "#1ABC9C", "#F1C40F", "#E67E22"],
+  "anim": {
+    "steps1": 14,
+    "steps2": 10,
+    "interval_ms": 60
+  }
+}
