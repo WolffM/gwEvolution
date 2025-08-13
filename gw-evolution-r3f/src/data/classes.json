@@ -1,0 +1,71 @@
+{
+  "classes": [
+    {
+      "id": "warrior",
+      "name": "Warrior",
+      "color": "#1ABC9C",
+      "icon": "/assets/icons/warrior.svg",
+      "specs": [
+        { "id": "crusher", "name": "Crusher", "icon": "/assets/icons/crusher.svg" },
+        { "id": "striker", "name": "Striker", "icon": "/assets/icons/striker.svg" },
+        { "id": "warlord", "name": "Warlord", "icon": "/assets/icons/warlord.svg" }
+      ]
+    },
+    {
+      "id": "priest",
+      "name": "Priest",
+      "color": "#E74C3C",
+      "icon": "/assets/icons/priest.svg",
+      "specs": [
+        { "id": "mender", "name": "Mender", "icon": "/assets/icons/mender.svg" },
+        { "id": "wardweaver", "name": "Wardweaver", "icon": "/assets/icons/wardweaver.svg" },
+        { "id": "inquisitor", "name": "Inquisitor", "icon": "/assets/icons/inquisitor.svg" }
+      ]
+    },
+    {
+      "id": "druid",
+      "name": "Druid",
+      "color": "#9B59B6",
+      "icon": "/assets/icons/druid.svg",
+      "specs": [
+        { "id": "shapeshifter", "name": "Shapeshifter", "icon": "/assets/icons/shapeshifter.svg" },
+        { "id": "vitalist", "name": "Vitalist", "icon": "/assets/icons/vitalist.svg" },
+        { "id": "elementalist", "name": "Elementalist", "icon": "/assets/icons/elementalist.svg" }
+      ]
+    },
+    {
+      "id": "mesmer",
+      "name": "Mesmer",
+      "color": "#3498DB",
+      "icon": "/assets/icons/mesmer.svg",
+      "specs": [
+        { "id": "dominator", "name": "Dominator", "icon": "/assets/icons/dominator.svg" },
+        { "id": "summoner", "name": "Summoner", "icon": "/assets/icons/summoner.svg" },
+        { "id": "inspirer", "name": "Inspirer", "icon": "/assets/icons/inspirer.svg" }
+      ]
+    },
+    {
+      "id": "mage",
+      "name": "Mage",
+      "color": "#F1C40F",
+      "icon": "/assets/icons/mage.svg",
+      "specs": [
+        { "id": "evoker", "name": "Evoker", "icon": "/assets/icons/evoker.svg" },
+        { "id": "warlock", "name": "Warlock", "icon": "/assets/icons/warlock.svg" },
+        { "id": "mystic", "name": "Mystic", "icon": "/assets/icons/mystic.svg" }
+      ]
+    },
+    {
+      "id": "rogue",
+      "name": "Rogue",
+      "color": "#E67E22",
+      "icon": "/assets/icons/rogue.svg",
+      "specs": [
+        { "id": "hunter", "name": "Hunter", "icon": "/assets/icons/hunter.svg" },
+        { "id": "assassin", "name": "Assassin", "icon": "/assets/icons/assassin.svg" },
+        { "id": "shadow", "name": "Shadow", "icon": "/assets/icons/shadow.svg" }
+      ]
+    }
+  ],
+  "links": []
+}
